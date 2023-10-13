@@ -133,7 +133,7 @@ button:active {
   background: #dd9e4b;
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
