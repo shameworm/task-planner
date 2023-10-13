@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #ffd8a8;
+}
+
+#main-header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff8c00;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#main-header h1 {
+  color: #000000;
+  margin: 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+section {
+  margin: 1rem auto;
+  width: 40rem;
+  max-width: 90%;
+}
+
+section ul::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+section ul::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+section ul:hover::-webkit-scrollbar-thumb {
+  background-color: #e7be8b;
+}
+
+
+section ul {
+  padding: 1rem;
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+
+section > h2 {
+  color: white;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  background: #ff8c00;
+  color: white;
+  border: 1px solid #ff8c00;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+button.alt {
+  background: white;
+  color: #ff8c00;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover,
+button:active {
+  background: #ff8c00;
+  border-color: #ff8c00;
+  color: white;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.636);
+}
+
+
+
+#active-projects > header {
+  background: #ffa500;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#active-projects header h2 {
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+#finished-projects > header {
+  background: #dd9e4b;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#finished-projects header h2 {
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
