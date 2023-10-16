@@ -45,7 +45,6 @@ footer {
 ul {
   list-style: none;
   margin: 0;
-  padding: 0;
 }
 
 li {
@@ -113,6 +112,10 @@ button:active {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
   background: rgb(255, 255, 255);
+}
+
+.droppable {
+  background-color: #ffbd42;
 }
 
 #active-projects > header {
