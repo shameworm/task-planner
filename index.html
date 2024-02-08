@@ -1,110 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Project Board</title>
-        <link rel="stylesheet" href="assets/styles/app.css" />
-        <!-- <script src="assets/scripts/utility/dom-manipulator.js" defer></script> -->
-        <!-- <script src="assets/scripts/app/component.js" defer></script> -->
-        <!-- <script src="assets/scripts/app/Tooltip.js" defer type="module"></script>
-        <script src="assets/scripts/app/ProjectItem.js"></script>
-        <script src="assets/scripts/app/ProjectList.js"></script> -->
-        <script src="assets/scripts/app.js" defer type="module"></script>
-    </head>
-    <body>
-        <template id="tooltip">
-            <h2>More info</h2>
-            <p></p>
-        </template>
-        <header id="main-header">
-            <h1>PROJECT PLANNER</h1>
-        </header>
-        <main>
-            <section id="active-projects">
-                <header>
-                    <h2>Active Projects</h2>
-                </header>
-                <ul>
-                    <li
-                        id="p1"
-                        data-extra-info="Got lifetime access, but would be nice to finish it soon!"
-                        class="card"
-                        draggable="true"
-                    >
-                        <h2>Finish the Course</h2>
-                        <p>Finish the course within the next two weeks.</p>
-                        <button class="alt">More Info</button>
-                        <button>Finish</button>
-                    </li>
-                    <li
-                        id="p2"
-                        data-extra-info="Not really a business topic but still important."
-                        class="card"
-                        draggable="true"
-                    >
-                        <h2>Buy Groceries</h2>
-                        <p>Don't forget to pick up groceries today.</p>
-                        <button class="alt">More Info</button>
-                        <button>Finish</button>
-                    </li>
-                    <li
-                        id="p3"
-                        data-extra-info="A little cumbersome to use this in the project planner, don't your think?"
-                        class="card"
-                        draggable="true"
-                    >
-                        <h2>Buy fruits</h2>
-                        <p>They are healthy.</p>
-                        <button class="alt">More Info</button>
-                        <button>Finish</button>
-                    </li>
-                    <li
-                        id="p4"
-                        data-extra-info="The project must be deadly beautiful."
-                        class="card"
-                        draggable="true"
-                    >
-                        <h2>Create a lot of stylesheets</h2>
-                        <p>Style, style is everything.</p>
-                        <button class="alt">More Info</button>
-                        <button>Finish</button>
-                    </li>
-                </ul>
-            </section>
-            <section id="finished-projects">
-                <header>
-                    <h2>Finished Projects</h2>
-                </header>
-                <ul>
-                    <li
-                        id="p5"
-                        data-extra-info="Super important conference! Fictional but still!"
-                        class="card"
-                        draggable="true"
-                    >
-                        <h2>Book Hotel</h2>
-                        <p>
-                            Academind conference takes place in December, don't
-                            forget to book a hotel.
-                        </p>
-                        <button class="alt">More Info</button>
-                        <button>Activate</button>
-                    </li>
-                    <li
-                        id="p6"
-                        data-extra-info="Nailed it! "
-                        class="card"
-                        draggable="true"
-                    >
-                        <h2>The codewars tournament</h2>
-                        <p>The GREATEST and IMPORTANT(also).</p>
-                        <button class="alt">More Info</button>
-                        <button>Activate</button>
-                    </li>
-                </ul>
-            </section>
-        </main>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
