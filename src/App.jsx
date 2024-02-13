@@ -19,6 +19,15 @@ function App() {
     });
   }
 
+  function cancelAddProjectHandler() {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectId: undefined,
+      };
+    });
+  }
+
   function addProjectHandler(projectData) {
     setProjectsState((prevState) => {
       const newProject = {
@@ -47,7 +56,7 @@ function App() {
       <main className="h-screen pt-1.5 flex gap-10">
         <ProjectsSidebar onStartAddProject={startAddProjectHandler} projects={projectsState.projects}/>
         {projectsState.selectedProjectId === null ? (
-          <NewProject onAdd={addProjectHandler}/>
+          <NewProject onAdd={addProjectHandler} onCancel={cancelAddProjectHandler}/>
         ) : projectsState.selectedProjectId === undefined ? (
           <NoProjectSelected onStartAddProject={startAddProjectHandler} />
         ) : null}
