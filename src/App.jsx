@@ -3,6 +3,7 @@ import { useState } from "react";
 import ProjectsSidebar from "./components/ProjectsSidebar";
 import NoProjectSelected from "./components/NoProjectSelected";
 import NewProject from "./components/NewProject";
+import SelectedProject from "./components/SelectedProject";
 
 function App() {
   const [projectsState, setProjectsState] = useState({
@@ -43,7 +44,30 @@ function App() {
     });
   }
 
-  console.log(projectsState);
+  function selectProjectHandler(id) {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectId: id,
+      };
+    });
+  }
+
+  function deleteProjectHandler() {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectId: undefined,
+        projects: prevState.projects.filter(
+          (project) => project.id !== prevState.selectedProjectId
+        ),
+      };
+    });
+  }
+
+  const selectedProject = projectsState.projects.find(
+    (project) => project.id === projectsState.selectedProjectId
+  );
 
   return (
     <>
@@ -54,12 +78,21 @@ function App() {
       </header>
 
       <main className="h-screen pt-1.5 flex gap-10">
-        <ProjectsSidebar onStartAddProject={startAddProjectHandler} projects={projectsState.projects}/>
+        <ProjectsSidebar
+          onStartAddProject={startAddProjectHandler}
+          projects={projectsState.projects}
+          onSelectProject={selectProjectHandler}
+        />
         {projectsState.selectedProjectId === null ? (
-          <NewProject onAdd={addProjectHandler} onCancel={cancelAddProjectHandler}/>
+          <NewProject
+            onAdd={addProjectHandler}
+            onCancel={cancelAddProjectHandler}
+          />
         ) : projectsState.selectedProjectId === undefined ? (
           <NoProjectSelected onStartAddProject={startAddProjectHandler} />
-        ) : null}
+        ) : (
+          <SelectedProject project={selectedProject} onDelete={deleteProjectHandler}/>
+        )}
       </main>
     </>
   );
