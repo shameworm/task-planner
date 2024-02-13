@@ -19,6 +19,23 @@ function App() {
     });
   }
 
+  function addProjectHandler(projectData) {
+    setProjectsState((prevState) => {
+      const newProject = {
+        ...projectData,
+        id: parseInt(Date.now() * Math.random()),
+      };
+
+      return {
+        ...prevState,
+        selectedProjectId: undefined,
+        projects: [...prevState.projects, newProject],
+      };
+    });
+  }
+
+  console.log(projectsState);
+
   return (
     <>
       <header className="w-full border-b-2 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 border-b-transparent">
@@ -28,9 +45,9 @@ function App() {
       </header>
 
       <main className="h-screen pt-1.5 flex gap-10">
-        <ProjectsSidebar onStartAddProject={startAddProjectHandler} />
+        <ProjectsSidebar onStartAddProject={startAddProjectHandler} projects={projectsState.projects}/>
         {projectsState.selectedProjectId === null ? (
-          <NewProject />
+          <NewProject onAdd={addProjectHandler}/>
         ) : projectsState.selectedProjectId === undefined ? (
           <NoProjectSelected onStartAddProject={startAddProjectHandler} />
         ) : null}
