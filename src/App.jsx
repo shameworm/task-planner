@@ -5,11 +5,44 @@ import NoProjectSelected from "./components/NoProjectSelected";
 import NewProject from "./components/NewProject";
 import SelectedProject from "./components/SelectedProject";
 
+// Temp project item
+const tempProject = {
+  id: 0,
+  title: "Learn React",
+  description: "ASDASDASD vfdsfasd adf asfdsa",
+  dueDate: "12.11.2022",
+};
+
 function App() {
   const [projectsState, setProjectsState] = useState({
     selectedProjectId: undefined,
-    projects: [],
+    projects: [{ ...tempProject }],
+    tasks: [],
   });
+
+  function addTaskHandler(text) {
+    setProjectsState((prevState) => {
+      const newTask = {
+        text: text,
+        projectId: prevState.selectedProjectId,
+        id: parseInt(Date.now() * Math.random()),
+      };
+
+      return {
+        ...prevState,
+        tasks: [...prevState.tasks, newTask],
+      };
+    });
+  }
+
+  function deleteTaskHandler(id) {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        tasks: prevState.tasks.filter((task) => task.id !== id),
+      };
+    });
+  }
 
   function startAddProjectHandler() {
     setProjectsState((prevState) => {
@@ -82,6 +115,7 @@ function App() {
           onStartAddProject={startAddProjectHandler}
           projects={projectsState.projects}
           onSelectProject={selectProjectHandler}
+          selectedProjectId={projectsState.selectedProjectId}
         />
         {projectsState.selectedProjectId === null ? (
           <NewProject
@@ -91,7 +125,13 @@ function App() {
         ) : projectsState.selectedProjectId === undefined ? (
           <NoProjectSelected onStartAddProject={startAddProjectHandler} />
         ) : (
-          <SelectedProject project={selectedProject} onDelete={deleteProjectHandler}/>
+          <SelectedProject
+            project={selectedProject}
+            onAddTask={addTaskHandler}
+            onDeleteTask={deleteTaskHandler}
+            onDelete={deleteProjectHandler}
+            tasks={projectsState.tasks}
+          />
         )}
       </main>
     </>

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
-import Input from "./Input";
-import Modal from "./Modal";
+import Input from "./custom-components/Input";
+import Modal from "./modals/Modal";
 
 export default function NewFunction({ onAdd, onCancel }) {
   const modal = useRef();

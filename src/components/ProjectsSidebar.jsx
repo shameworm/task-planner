@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "./custom-components/Button";
 
 export default function ProjectsSidebar({
   onStartAddProject,
@@ -17,10 +17,10 @@ export default function ProjectsSidebar({
       <ul className="mt-8">
         {projects.map((project) => {
           let cssClasses =
-            "w-full text-left px-2 py-1 rounded-sm my-1 text-slate-400 hover:text-slate-200 hover:bg-slate-800";
+            "w-full text-left px-2 py-1 rounded-sm my-1 hover:text-slate-200 hover:bg-slate-800";
 
           if (project.id === selectedProjectId) {
-            cssClasses += " bg-slate-800 text-slate-200";
+            cssClasses += " bg-slate-800 text-slate-200 rounded-md";
           } else {
             cssClasses += " text-slate-400";
           }
